@@ -1,6 +1,7 @@
 ﻿@using WebApplication.Model
 @model IEnumerable<URL_tblViewModel>
 
+
 <h2>URL List</h2>
 
 <table class="table table-bordered">
@@ -10,6 +11,7 @@
             <th>URL</th>
             <th>Orginal url</th>
             <th>Active</th>
+            <th>Date</th>
         </tr>
     </thead>
     <tbody>
@@ -20,6 +22,7 @@
                 <td><a href="@item.Display_URL" target="_blank">@item.Display_URL</a></td>
                 <td>@item.URL</td>
                 <td>@(item.Active == true ? "Yes" : "No")</td>
+                <td>@(item.CreatedDate.HasValue ? item.CreatedDate.Value.ToString("dd/MM/yyyy") : "")</td>
             </tr>
         }
     </tbody>
