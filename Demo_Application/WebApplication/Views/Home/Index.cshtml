@@ -1,0 +1,26 @@
+﻿@using WebApplication.Model
+@model IEnumerable<URL_tblViewModel>
+
+<h2>URL List</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>URL</th>
+            <th>Orginal url</th>
+            <th>Active</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td><a href="@item.Display_URL" target="_blank">@item.Display_URL</a></td>
+                <td>@item.URL</td>
+                <td>@(item.Active == true ? "Yes" : "No")</td>
+            </tr>
+        }
+    </tbody>
+</table>
